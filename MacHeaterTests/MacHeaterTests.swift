@@ -2,9 +2,9 @@ import Foundation
 import XCTest
 
 //♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️♨️
-// Amazingly complex swift compilation stuff
 final class MegaHeatingComputingTests: XCTestCase {
     
+    // Amazingly complex swift compilation stuff
     public let __tmp0 = 2 * 2 * 2 * 2.0 / 2 + 2
     public let __tmp1 = 2 * 2 * 2 * 2.0 / 2 + 2
     public let __tmp2 = 2 * 2 * 2 * 2.0 / 2 + 2
@@ -39,6 +39,69 @@ final class MegaHeatingComputingTests: XCTestCase {
         .compactMap { Int($0) }
         .reduce(0, +)
     
+    /// Invokes each test with large number of times
+    override func invokeTest() {
+        for time in 0...Int.max {
+            print("Test is being invoked: \(time) times")
+            super.invokeTest()
+        }
+    }
+    
+    class MemoryContainer {
+        init() {
+            var values = [String]()
+            for number in 0...99 {
+                for numberInside in 0...3 {
+                    values.append("\(number) \(numberInside) \(Double.infinity)")
+                }
+            }
+            container.append(contentsOf: values)
+        }
+        
+        var container: [String] = []
+    }
+    
+    /// Creates extensive thread and memory numbers
+    /// It creates a lot of threads and floads CPU with paralel tasks
+    /// CPU spends more time switching between threads rather than performing actual work
+    /// This test easily creates 1000+ threads in few seconds
+    func testOverflowingThreadPool() {
+        var containers = [MemoryContainer]()
+        var threads = [Thread]()
+        
+        let memoryLoadThread = Thread {
+            for _ in 0...Int.max {
+                for _ in 0...Int.max {
+                    let container = MemoryContainer()
+                    containers.append(container)
+                }
+            }
+        }
+        threads.append(memoryLoadThread)
+        
+        for number in 0...Int.max {
+            let container = MemoryContainer()
+            let thread = Thread {
+                print("Printing \(number)")
+                container.container.append("\(Double.infinity)")
+            }
+            thread.start()
+            threads.append(thread)
+            let thread2 = Thread {
+                containers.append(container)
+            }
+            threads.append(thread2)
+            thread2.start()
+        }
+        for thread in threads {
+            print(" \(thread) \(thread.isFinished)")
+        }
+        XCTAssertTrue(containers.count > 0)
+        XCTAssertTrue(threads.count > 0)
+    }
+    
+    /// Uses impossible to calculate result in worst case
+    /// Kind of infinite loop with exploding memory
     func testAllConstruct() {
         // not optimized dynamic programming algorithm to count worst case with big output that should fail
         func allConstruct(_ target: String, _ wordBank: [String]) -> [[String]] {
