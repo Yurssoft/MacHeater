@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50A9DCBB2B48E6C800A3183F /* LongBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A9DCBA2B48E6C800A3183F /* LongBlob.swift */; };
 		58F8ED2F2B3328FC00F2EB1E /* MacHeaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F8ED2E2B3328FC00F2EB1E /* MacHeaterApp.swift */; };
 		58F8ED312B3328FC00F2EB1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F8ED302B3328FC00F2EB1E /* ContentView.swift */; };
 		58F8ED332B3328FE00F2EB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F8ED322B3328FE00F2EB1E /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50A9DCBA2B48E6C800A3183F /* LongBlob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBlob.swift; sourceTree = "<group>"; };
 		58F8ED2B2B3328FC00F2EB1E /* MacHeater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacHeater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F8ED2E2B3328FC00F2EB1E /* MacHeaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacHeaterApp.swift; sourceTree = "<group>"; };
 		58F8ED302B3328FC00F2EB1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				58F8ED402B3328FE00F2EB1E /* MacHeaterTests.swift */,
+				50A9DCBA2B48E6C800A3183F /* LongBlob.swift */,
 			);
 			path = MacHeaterTests;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A9DCBB2B48E6C800A3183F /* LongBlob.swift in Sources */,
 				58F8ED412B3328FE00F2EB1E /* MacHeaterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
