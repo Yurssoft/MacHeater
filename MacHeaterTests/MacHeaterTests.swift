@@ -73,6 +73,7 @@ final class MegaHeatingComputingTests: XCTestCase {
             for _ in 0...Int.max {
                 for _ in 0...Int.max {
                     let container = MemoryContainer()
+                    container.container.append(Blob.blob)
                     containers.append(container)
                 }
             }

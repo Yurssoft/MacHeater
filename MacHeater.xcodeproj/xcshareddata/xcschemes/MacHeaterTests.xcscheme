@@ -48,6 +48,11 @@
                BlueprintName = "MacHeaterTests"
                ReferencedContainer = "container:MacHeater.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "MegaHeatingComputingTests/testAllConstruct()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
